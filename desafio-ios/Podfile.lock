@@ -1,19 +1,48 @@
 PODS:
-  - Haneke (1.0.2)
-  - RxCocoa (3.1.0):
-    - RxSwift (~> 3.1)
-  - RxSwift (3.1.0)
+  - Alamofire (4.2.0)
+  - Moya (8.0.0-beta.6):
+    - Moya/Core (= 8.0.0-beta.6)
+  - Moya-ObjectMapper/Core (2.2.1):
+    - Moya (>= 8.0.0-beta.4)
+    - ObjectMapper (= 2.2.1)
+  - Moya-ObjectMapper/RxSwift (2.2.1):
+    - Moya-ObjectMapper/Core
+    - Moya/RxSwift
+    - RxSwift (= 3.0.1)
+  - Moya/Core (8.0.0-beta.6):
+    - Alamofire (~> 4.0)
+    - Result (~> 3.0)
+  - Moya/RxSwift (8.0.0-beta.6):
+    - Moya/Core
+    - RxSwift (~> 3.0)
+  - ObjectMapper (2.2.1)
+  - Result (3.1.0)
+  - RxCocoa (3.0.1):
+    - RxSwift (~> 3.0)
+  - RxSwift (3.0.1)
 
 DEPENDENCIES:
-  - Haneke
-  - RxCocoa (~> 3.0)
-  - RxSwift (~> 3.0)
+  - Moya-ObjectMapper/RxSwift (from `https://github.com/ivanbruel/Moya-ObjectMapper`)
+  - RxCocoa (~> 3.0.1)
+
+EXTERNAL SOURCES:
+  Moya-ObjectMapper:
+    :git: https://github.com/ivanbruel/Moya-ObjectMapper
+
+CHECKOUT OPTIONS:
+  Moya-ObjectMapper:
+    :commit: 2c82539c7189a0a1bef360289a06090a5f56d5b8
+    :git: https://github.com/ivanbruel/Moya-ObjectMapper
 
 SPEC CHECKSUMS:
-  Haneke: 01454a67322faa0dd9d81fc0f447885044e71521
-  RxCocoa: 50d7564866da9299161e86a263ce12a0873904d8
-  RxSwift: 83ff553e7593fdfdcb2562933a64c0284dffdadc
+  Alamofire: aa2e09d871c9160ac53c90e83c68064a94e3dfbe
+  Moya: a29e2503a0c5067d462ba2f07cc6b6b1f3fc172d
+  Moya-ObjectMapper: 6852b17a8971dd9f614322ace8d36a4e6f14ba5c
+  ObjectMapper: 41e43e1a89f8060ef5ea5d04ba852e269a621d68
+  Result: 4e3ed5995ed94d0cd6a09be9a431fce3f3624bbf
+  RxCocoa: 15a52fc590dcc700cb4a690a633b5c5184ce3a78
+  RxSwift: af5680055c4ad04480189c52d28385b1029493a6
 
-PODFILE CHECKSUM: f17305ac2fbde10b8caed19ff4b2b303c80be152
+PODFILE CHECKSUM: 740a07c7ce90f5e2592c315ad308c14746529ce5
 
 COCOAPODS: 1.1.1

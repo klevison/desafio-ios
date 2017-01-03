@@ -1,0 +1,19 @@
+PODS:
+  - Haneke (1.0.2)
+  - RxCocoa (3.1.0):
+    - RxSwift (~> 3.1)
+  - RxSwift (3.1.0)
+
+DEPENDENCIES:
+  - Haneke
+  - RxCocoa (~> 3.0)
+  - RxSwift (~> 3.0)
+
+SPEC CHECKSUMS:
+  Haneke: 01454a67322faa0dd9d81fc0f447885044e71521
+  RxCocoa: 50d7564866da9299161e86a263ce12a0873904d8
+  RxSwift: 83ff553e7593fdfdcb2562933a64c0284dffdadc
+
+PODFILE CHECKSUM: f17305ac2fbde10b8caed19ff4b2b303c80be152
+
+COCOAPODS: 1.1.1

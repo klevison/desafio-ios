@@ -29,7 +29,6 @@ final class RepositoriesViewController: BaseViewController, UITableViewDelegate 
         
         tableView.rx.setDelegate(self)
             .addDisposableTo(disposeBag)
-
     }
     
     // MARK: Table view delegate ;)

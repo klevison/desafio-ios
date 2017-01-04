@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-final class PullRequestViewController: BaseViewController {
+final class PullRequestViewController: BaseViewController, UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     var viewModel: PullRequestViewModel!
@@ -20,10 +20,14 @@ final class PullRequestViewController: BaseViewController {
         super.viewDidLoad()
 
         viewModel = PullRequestViewModel(repository: repository)
-        
+        self.title = repository.name!
+        setupTableView()
+    }
+    
+    private func setupTableView() {
         viewModel.data.drive(tableView.rx.items(cellIdentifier: "PullRequestCellID", cellType: PullRequestTableViewCell.self)) { row, pullrequest, cell in
             cell.pullRequest = pullrequest
-        }.addDisposableTo(disposeBag)
+            }.addDisposableTo(disposeBag)
         
         tableView.rx.itemSelected.subscribe(onNext: { [weak self] indexPath in
             let cell = self?.tableView.cellForRow(at: indexPath) as! PullRequestTableViewCell
@@ -32,7 +36,15 @@ final class PullRequestViewController: BaseViewController {
                 url.open()
             }
         }).addDisposableTo(disposeBag)
-    
+        
+        tableView.rx.setDelegate(self)
+            .addDisposableTo(disposeBag)
     }
+    
+    // MARK: Table view delegate ;)
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 137
+    }
+
 
 }

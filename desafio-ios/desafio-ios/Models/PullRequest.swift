@@ -13,6 +13,8 @@ struct PullRequest: Mappable {
     var id: Int?
     var url: String?
     var body: String?
+    var title: String?
+    var owner: Owner?
     
     // MARK: JSON
     init?(map: Map) { }
@@ -21,6 +23,8 @@ struct PullRequest: Mappable {
         id <- map["id"]
         url <- map["url"]
         body <- map["body"]
+        title <- map["title"]
+        owner <- map["user"]
     }
     
 }

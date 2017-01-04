@@ -27,21 +27,3 @@ struct Repository: Mappable {
     }
     
 }
-
-
-struct PullRequest: Mappable {
-    
-    var id: Int?
-    var url: String?
-    var body: String?
-    
-    // MARK: JSON
-    init?(map: Map) { }
-    
-    mutating func mapping(map: Map) {
-        id <- map["id"]
-        url <- map["url"]
-        body <- map["body"]
-    }
-    
-}

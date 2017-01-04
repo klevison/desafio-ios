@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -22,19 +23,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="T4x-hE-iJw">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="78" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="T4x-hE-iJw">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="GithubRepositoriesCellID" id="bnt-Va-GxS">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="GithubRepositoriesCellID" rowHeight="78" id="bnt-Va-GxS" customClass="RepositoriesTableViewCell" customModule="desafio_ios" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="78"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bnt-Va-GxS" id="1oY-GL-mup">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="77"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0nY-N2-yjp">
+                                                    <rect key="frame" x="8" y="11" width="359" height="55.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="0nY-N2-yjp" firstAttribute="top" secondItem="1oY-GL-mup" secondAttribute="topMargin" constant="3" id="5av-rR-X6R"/>
+                                                <constraint firstItem="0nY-N2-yjp" firstAttribute="leading" secondItem="1oY-GL-mup" secondAttribute="leadingMargin" id="J2d-UD-xGL"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="0nY-N2-yjp" secondAttribute="bottom" constant="3" id="LN2-bx-Ioo"/>
+                                                <constraint firstItem="0nY-N2-yjp" firstAttribute="trailing" secondItem="1oY-GL-mup" secondAttribute="trailingMargin" id="hG4-Zi-GTo"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="eSr-Qc-Y58" kind="show" id="F09-Ba-wo1"/>
+                                            <outlet property="repoNameLabel" destination="0nY-N2-yjp" id="i1d-gO-Zvd"/>
+                                            <segue destination="eSr-Qc-Y58" kind="show" identifier="PullsSegueID" id="oKy-Js-aEq"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -56,10 +72,10 @@
             </objects>
             <point key="canvasLocation" x="1076" y="693.10344827586209"/>
         </scene>
-        <!--View Controller-->
+        <!--Pull Request View Controller-->
         <scene sceneID="XEU-SS-NPo">
             <objects>
-                <viewController id="eSr-Qc-Y58" sceneMemberID="viewController">
+                <viewController id="eSr-Qc-Y58" customClass="PullRequestViewController" customModule="desafio_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ZfQ-dt-Q1Q"/>
                         <viewControllerLayoutGuide type="bottom" id="buX-Qn-Pqr"/>
@@ -72,13 +88,30 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="sca-je-8rn">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PullRequestCellID" id="sca-je-8rn" customClass="PullRequestTableViewCell" customModule="desafio_ios" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sca-je-8rn" id="sx4-ww-fIe">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v7p-Xd-BRq">
+                                                    <rect key="frame" x="8" y="8" width="359" height="27"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="v7p-Xd-BRq" firstAttribute="bottom" secondItem="sx4-ww-fIe" secondAttribute="bottomMargin" id="1XW-7w-cLa"/>
+                                                <constraint firstItem="v7p-Xd-BRq" firstAttribute="trailing" secondItem="sx4-ww-fIe" secondAttribute="trailingMargin" id="BEU-6d-O7p"/>
+                                                <constraint firstItem="v7p-Xd-BRq" firstAttribute="top" secondItem="sx4-ww-fIe" secondAttribute="topMargin" id="DKR-Ta-Zup"/>
+                                                <constraint firstItem="v7p-Xd-BRq" firstAttribute="leading" secondItem="sx4-ww-fIe" secondAttribute="leadingMargin" id="h0f-1j-Bfa"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="pullResquestTitleLabel" destination="v7p-Xd-BRq" id="Bcv-QA-ee1"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -91,10 +124,13 @@
                             <constraint firstItem="TkO-6K-tfF" firstAttribute="leading" secondItem="O1t-qE-AQW" secondAttribute="leading" id="wG7-CH-zMU"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="TkO-6K-tfF" id="qzK-fp-26n"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WSZ-bn-jLZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1972" y="693"/>
+            <point key="canvasLocation" x="1972" y="692.20389805097454"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="p5J-XD-HLL">

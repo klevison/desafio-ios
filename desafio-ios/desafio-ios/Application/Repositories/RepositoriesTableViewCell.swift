@@ -6,4 +6,18 @@
 //  Copyright © 2017 Arena. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+final class RepositoriesTableViewCell: UITableViewCell {
+    
+    @IBOutlet weak var repoNameLabel: UILabel!
+    
+    var repository: Repository? {
+        didSet {
+            if let fullName = repository?.full_name {
+                repoNameLabel.text = fullName
+            }
+        }
+    }
+    
+}

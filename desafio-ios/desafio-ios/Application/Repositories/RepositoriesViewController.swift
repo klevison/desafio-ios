@@ -10,7 +10,7 @@ import UIKit
 import RxCocoa
 import RxSwift
 
-final class RepositoriesViewController: BaseViewController {
+final class RepositoriesViewController: BaseViewController, UITableViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     var viewModel: RepositoriesViewModel!
@@ -19,10 +19,30 @@ final class RepositoriesViewController: BaseViewController {
         super.viewDidLoad()
         
         viewModel = RepositoriesViewModel()
-        viewModel.searchResult.drive(tableView.rx.items(cellIdentifier: "GithubRepositoriesCellID", cellType: UITableViewCell.self)) { row, repositorie, cell in
-            cell.textLabel?.text = repositorie.full_name
+        viewModel.searchResult.drive(tableView.rx.items(cellIdentifier: "GithubRepositoriesCellID", cellType: RepositoriesTableViewCell.self)) { row, repository, cell in
+            cell.repository = repository
         }.addDisposableTo(disposeBag)
+        
+        tableView.rx.itemSelected.subscribe(onNext: { [weak self] indexPath in
+            self?.performSegue(withIdentifier: "PullsSegueID", sender: self?.tableView.cellForRow(at: indexPath))
+        }).addDisposableTo(disposeBag)
+        
+        tableView.rx.setDelegate(self)
+            .addDisposableTo(disposeBag)
 
     }
     
+    // MARK: Table view delegate ;)
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 78
+    }
+    
+    // MARK: Segue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let pullRequestViewController = segue.destination as? PullRequestViewController {
+            if let cell = sender as? RepositoriesTableViewCell {
+                pullRequestViewController.repository = cell.repository
+            }
+        }
+    }
 }

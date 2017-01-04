@@ -7,13 +7,32 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
-final class PullRequestsViewController: BaseViewController {
-
+final class PullRequestViewController: BaseViewController {
+    
+    @IBOutlet weak var tableView: UITableView!
+    var viewModel: PullRequestViewModel!
+    var repository: Repository!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        viewModel = PullRequestViewModel(repository: repository)
+        
+        viewModel.data.drive(tableView.rx.items(cellIdentifier: "PullRequestCellID", cellType: PullRequestTableViewCell.self)) { row, pullrequest, cell in
+            cell.pullRequest = pullrequest
+        }.addDisposableTo(disposeBag)
+        
+        tableView.rx.itemSelected.subscribe(onNext: { [weak self] indexPath in
+            let cell = self?.tableView.cellForRow(at: indexPath) as! PullRequestTableViewCell
+            let pullRequest = cell.pullRequest
+            if let urlString = pullRequest?.url, let url = URL(string: urlString) {
+                url.open()
+            }
+        }).addDisposableTo(disposeBag)
+    
     }
-
 
 }

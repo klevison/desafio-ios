@@ -10,9 +10,11 @@ import Foundation
 import ObjectMapper
 
 struct Owner: Mappable {
-    
+    //Nomedo autor,
+    //Foto do autor,
     var id: Int!
     var login: String?
+    var avatarURLString: String?
     
     // MARK: JSON
     init?(map: Map) { }
@@ -20,6 +22,7 @@ struct Owner: Mappable {
     mutating func mapping(map: Map) {
         id <- map["id"]
         login <- map["login"]
+        avatarURLString <- map["avatar_url"]
     }
     
 }

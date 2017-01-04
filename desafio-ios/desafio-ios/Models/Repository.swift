@@ -11,9 +11,16 @@ import ObjectMapper
 
 struct Repository: Mappable {
     
+    //Nome do repositório,
+    //Descrição do Repositório,
+    //Número de Stars,
+    //Número de Forks
+    
     var id: Int?
     var name: String?
-    var full_name: String?
+    var repoDescription: String?
+    var forks: Int?
+    var stars: Int?
     var owner: Owner?
     
     // MARK: JSON
@@ -22,8 +29,10 @@ struct Repository: Mappable {
     mutating func mapping(map: Map) {
         id <- map["id"]
         name <- map["name"]
-        full_name <- map["full_name"]
+        repoDescription <- map["description"]
         owner <- map["owner"]
+        forks <- map["forks_count"]
+        stars <- map["stargazers_count"]
     }
     
 }

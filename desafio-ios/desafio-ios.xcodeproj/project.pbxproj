@@ -32,6 +32,7 @@
 		BE1B36CB1E1D1BDA00091A27 /* PullRequestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1B36CA1E1D1BDA00091A27 /* PullRequestTableViewCell.swift */; };
 		BE1B36CD1E1D1F3700091A27 /* PullRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1B36CC1E1D1F3700091A27 /* PullRequest.swift */; };
 		BE1B36CF1E1D200C00091A27 /* URLExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1B36CE1E1D200C00091A27 /* URLExtension.swift */; };
+		BE1B36D11E1D2B6200091A27 /* Screen Shot 2017-01-04 at 10.08.29 AM.png in Resources */ = {isa = PBXBuildFile; fileRef = BE1B36D01E1D2B6200091A27 /* Screen Shot 2017-01-04 at 10.08.29 AM.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +90,7 @@
 		BE1B36CA1E1D1BDA00091A27 /* PullRequestTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PullRequestTableViewCell.swift; sourceTree = "<group>"; };
 		BE1B36CC1E1D1F3700091A27 /* PullRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PullRequest.swift; sourceTree = "<group>"; };
 		BE1B36CE1E1D200C00091A27 /* URLExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLExtension.swift; sourceTree = "<group>"; };
+		BE1B36D01E1D2B6200091A27 /* Screen Shot 2017-01-04 at 10.08.29 AM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screen Shot 2017-01-04 at 10.08.29 AM.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +137,7 @@
 		BE1B36691E1BD13300091A27 = {
 			isa = PBXGroup;
 			children = (
+				BE1B36D01E1D2B6200091A27 /* Screen Shot 2017-01-04 at 10.08.29 AM.png */,
 				BE1B36741E1BD13300091A27 /* desafio-ios */,
 				BE1B36891E1BD13300091A27 /* desafio-iosTests */,
 				BE1B36941E1BD13300091A27 /* desafio-iosUITests */,
@@ -403,6 +406,7 @@
 			files = (
 				BE1B36801E1BD13300091A27 /* LaunchScreen.storyboard in Resources */,
 				BE1B367D1E1BD13300091A27 /* Assets.xcassets in Resources */,
+				BE1B36D11E1D2B6200091A27 /* Screen Shot 2017-01-04 at 10.08.29 AM.png in Resources */,
 				BE1B367B1E1BD13300091A27 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

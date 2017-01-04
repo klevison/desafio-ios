@@ -34,7 +34,7 @@ final class RepositoriesViewController: BaseViewController, UITableViewDelegate 
     
     // MARK: Table view delegate ;)
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 78
+        return 134
     }
     
     // MARK: Segue

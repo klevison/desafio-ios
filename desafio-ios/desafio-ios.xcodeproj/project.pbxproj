@@ -22,8 +22,10 @@
 		BE1B36B21E1BFC3100091A27 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1B36B11E1BFC3100091A27 /* Util.swift */; };
 		BE1B36B41E1C0F4D00091A27 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1B36B31E1C0F4D00091A27 /* Search.swift */; };
 		BE1B36B61E1C0F6800091A27 /* Owner.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1B36B51E1C0F6800091A27 /* Owner.swift */; };
-		BE1B36B81E1C0F8200091A27 /* Repositories.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1B36B71E1C0F8200091A27 /* Repositories.swift */; };
+		BE1B36B81E1C0F8200091A27 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1B36B71E1C0F8200091A27 /* Repository.swift */; };
 		BE1B36BB1E1C0FC600091A27 /* GithubService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1B36BA1E1C0FC600091A27 /* GithubService.swift */; };
+		BE1B36C11E1C2E1800091A27 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1B36C01E1C2E1800091A27 /* Result.swift */; };
+		BE1B36C31E1C34A000091A27 /* RepositoriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1B36C21E1C34A000091A27 /* RepositoriesViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,8 +73,10 @@
 		BE1B36B11E1BFC3100091A27 /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		BE1B36B31E1C0F4D00091A27 /* Search.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
 		BE1B36B51E1C0F6800091A27 /* Owner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Owner.swift; sourceTree = "<group>"; };
-		BE1B36B71E1C0F8200091A27 /* Repositories.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repositories.swift; sourceTree = "<group>"; };
+		BE1B36B71E1C0F8200091A27 /* Repository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		BE1B36BA1E1C0FC600091A27 /* GithubService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GithubService.swift; sourceTree = "<group>"; };
+		BE1B36C01E1C2E1800091A27 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		BE1B36C21E1C34A000091A27 /* RepositoriesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoriesViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,7 +190,8 @@
 			children = (
 				BE1B36B31E1C0F4D00091A27 /* Search.swift */,
 				BE1B36B51E1C0F6800091A27 /* Owner.swift */,
-				BE1B36B71E1C0F8200091A27 /* Repositories.swift */,
+				BE1B36B71E1C0F8200091A27 /* Repository.swift */,
+				BE1B36C01E1C2E1800091A27 /* Result.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -202,6 +207,7 @@
 			isa = PBXGroup;
 			children = (
 				BE1B36A71E1BD9A100091A27 /* RepositoriesViewController.swift */,
+				BE1B36C21E1C34A000091A27 /* RepositoriesViewModel.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -545,10 +551,12 @@
 				BE1B36B01E1BE3EF00091A27 /* Observable+ObjectMapper.swift in Sources */,
 				BE1B36A81E1BD9A100091A27 /* RepositoriesViewController.swift in Sources */,
 				BE1B36B61E1C0F6800091A27 /* Owner.swift in Sources */,
+				BE1B36C31E1C34A000091A27 /* RepositoriesViewModel.swift in Sources */,
 				BE1B36B21E1BFC3100091A27 /* Util.swift in Sources */,
 				BE1B36B41E1C0F4D00091A27 /* Search.swift in Sources */,
 				BE1B36BB1E1C0FC600091A27 /* GithubService.swift in Sources */,
-				BE1B36B81E1C0F8200091A27 /* Repositories.swift in Sources */,
+				BE1B36C11E1C2E1800091A27 /* Result.swift in Sources */,
+				BE1B36B81E1C0F8200091A27 /* Repository.swift in Sources */,
 				BE1B36761E1BD13300091A27 /* AppDelegate.swift in Sources */,
 				BE1B36AB1E1BDB1200091A27 /* BaseViewController.swift in Sources */,
 			);

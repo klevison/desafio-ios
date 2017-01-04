@@ -7,23 +7,22 @@
 //
 
 import UIKit
-import Moya_ObjectMapper
-import Moya
+import RxCocoa
+import RxSwift
 
 final class RepositoriesViewController: BaseViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    var viewModel: RepositoriesViewModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let provider = RxMoyaProvider<GithubService>()
-        provider.request(.repositories(query: "language:Java", sort: .stars, page: 1))
-            .mapObject(Search.self)
-            .subscribe { event -> Void in
-                print(event)
-            }.addDisposableTo(disposeBag)
-    
+        viewModel = RepositoriesViewModel()
+        viewModel.searchResult.drive(tableView.rx.items(cellIdentifier: "GithubRepositoriesCellID", cellType: UITableViewCell.self)) { row, repositorie, cell in
+            cell.textLabel?.text = repositorie.full_name
+        }.addDisposableTo(disposeBag)
+
     }
     
 }

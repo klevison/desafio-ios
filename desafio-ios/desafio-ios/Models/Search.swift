@@ -13,7 +13,11 @@ struct Search: Mappable {
     
     var total_count: Int?
     var incomplete_results: String?
-    var repositories: [Repositories]?
+    var repositories: [Repository]?
+    
+    init() {
+    
+    }
     
     // MARK: JSON
     init?(map: Map) { }

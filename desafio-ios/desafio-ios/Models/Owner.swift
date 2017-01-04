@@ -11,8 +11,8 @@ import ObjectMapper
 
 struct Owner: Mappable {
     
-    var login: Int!
-    var id: String?
+    var id: Int!
+    var login: String?
     
     // MARK: JSON
     init?(map: Map) { }

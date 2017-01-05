@@ -9,22 +9,20 @@
 import Foundation
 import ObjectMapper
 
-struct Search: Mappable {
+class Search: Mappable {
     
     var total_count: Int?
-    var incomplete_results: String?
     var repositories: [Repository]?
+    var page: Int?
+    var nextPage: Int?
     
-    init() {
-    
+    required init?(map: Map) {
+        
     }
     
-    // MARK: JSON
-    init?(map: Map) { }
-    
-    mutating func mapping(map: Map) {
+    // Mappable
+    func mapping(map: Map) {
         total_count <- map["total_count"]
-        incomplete_results <- map["incomplete_results"]
         repositories <- map["items"]
     }
     

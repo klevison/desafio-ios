@@ -11,11 +11,6 @@ import ObjectMapper
 
 struct Repository: Mappable {
     
-    //Nome do repositório,
-    //Descrição do Repositório,
-    //Número de Stars,
-    //Número de Forks
-    
     var id: Int?
     var name: String?
     var repoDescription: String?

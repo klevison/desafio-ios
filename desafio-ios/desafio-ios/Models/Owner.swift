@@ -10,8 +10,7 @@ import Foundation
 import ObjectMapper
 
 struct Owner: Mappable {
-    //Nomedo autor,
-    //Foto do autor,
+
     var id: Int!
     var login: String?
     var avatarURLString: String?

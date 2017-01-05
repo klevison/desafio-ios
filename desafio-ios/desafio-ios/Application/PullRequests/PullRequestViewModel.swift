@@ -13,7 +13,7 @@ final class PullRequestViewModel {
     var data: Driver<[PullRequest]>
     
     init(repository: Repository) {
-        data = GithubService.pulls(repository: repository)
+        data = GithubAPI.pulls(repository: repository)
             .asDriver(onErrorRecover: { error in
                 return Driver.just(.failure(error))
             }).flatMapLatest { result in

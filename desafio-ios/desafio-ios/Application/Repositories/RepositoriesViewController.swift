@@ -10,29 +10,38 @@ import UIKit
 import RxCocoa
 import RxSwift
 
-final class RepositoriesViewController: BaseViewController, UITableViewDelegate {
-
-    @IBOutlet weak var tableView: UITableView!
+final class RepositoriesViewController: UITableViewController {
+    
+    @IBOutlet weak var indicatorView: UIActivityIndicatorView!
     var viewModel: RepositoriesViewModel!
+    let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView.dataSource = nil
         viewModel = RepositoriesViewModel()
-        viewModel.searchResult.drive(tableView.rx.items(cellIdentifier: "GithubRepositoriesCellID", cellType: RepositoriesTableViewCell.self)) { row, repository, cell in
-            cell.repository = repository
-        }.addDisposableTo(disposeBag)
         
-        tableView.rx.itemSelected.subscribe(onNext: { [weak self] indexPath in
-            self?.performSegue(withIdentifier: "PullsSegueID", sender: self?.tableView.cellForRow(at: indexPath))
-        }).addDisposableTo(disposeBag)
+        rx.sentMessage(#selector(viewWillAppear))
+            .map { _ in }
+            .bindTo(viewModel.refreshTrigger)
+            .addDisposableTo(disposeBag)
+                
+        viewModel.isLoading
+            .drive(indicatorView.rx.isAnimating)
+            .addDisposableTo(disposeBag)
         
-        tableView.rx.setDelegate(self)
+        viewModel.data
+            .bindTo(tableView.rx.items(cellIdentifier: "GithubRepositoriesCellID", cellType: RepositoriesTableViewCell.self)) { _, repository, cell in
+                cell.repository = repository
+            }.addDisposableTo(disposeBag)
+        
+        tableView.rx.reachedBottom
+            .drive(viewModel.loadNextPageTrigger)
             .addDisposableTo(disposeBag)
     }
-    
-    // MARK: Table view delegate ;)
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+ 
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 134
     }
     
@@ -44,4 +53,5 @@ final class RepositoriesViewController: BaseViewController, UITableViewDelegate 
             }
         }
     }
+    
 }

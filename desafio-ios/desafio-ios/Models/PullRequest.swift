@@ -21,7 +21,7 @@ struct PullRequest: Mappable {
     
     mutating func mapping(map: Map) {
         id <- map["id"]
-        url <- map["url"]
+        url <- map["html_url"]
         body <- map["body"]
         title <- map["title"]
         owner <- map["user"]

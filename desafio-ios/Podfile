@@ -5,21 +5,16 @@ target 'desafio-ios' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
 
-    #pod 'RxCocoa',    '~> 3.0.1'
-  #pod 'RxDataSources'
   pod 'Haneke'
   pod 'Action'
   pod 'WebLinking', :git => 'https://github.com/kylef/WebLinking.swift', :commit => 'fddbacc30deab8afe12ce1d3b78bd27c593a0c29'
-  #pod 'Moya-ObjectMapper/RxSwift', :git => 'https://github.com/ivanbruel/Moya-ObjectMapper'
-  #pod 'Moya', :git => 'https://github.com/Moya/Moya', :commit => '35955d7f7c4bac6d4ba0fdccd17ffa3d2839a2cb'
-  
-  pod 'Moya-ObjectMapper/RxSwift', :git => 'https://github.com/klevison/Moya-ObjectMapper', :commit => '58570aa6ff183d08e5c1e5ac1f9a5fa74c400c05'
+  pod 'Moya-ObjectMapper/RxSwift', :git => 'https://github.com/klevison/Moya-ObjectMapper', :commit => '3110c3d90921bfc79df9a86a9fdb69b41d19b57a'
   pod 'Moya', :git => 'https://github.com/Moya/Moya'
   pod 'RxSwift', :git => 'https://github.com/ReactiveX/RxSwift'
   
   target 'desafio-iosTests' do
     inherit! :search_paths
-    # Pods for testing
+    pod 'RxTest'
   end
 
   target 'desafio-iosUITests' do

@@ -11,7 +11,12 @@ import RxSwift
 import Moya_ObjectMapper
 import Moya
 
-struct GithubAPI {
+protocol GithubAPIProtocol {
+    static func pulls(repository: Repository) -> Observable<APIResult<[PullRequest]>>
+    static func search(page: Int) -> Observable<Search>
+}
+
+struct GithubAPI: GithubAPIProtocol {
     
     static func pulls(repository: Repository) -> Observable<APIResult<[PullRequest]>> {
         
@@ -38,7 +43,7 @@ struct GithubAPI {
         
     }
     
-    static func search(page: Int) -> Observable<Search> {
+    static func search(page: Int = 1) -> Observable<Search> {
         
         return Observable.create({ (observer: AnyObserver<Search>) -> Disposable in
             

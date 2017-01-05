@@ -32,6 +32,8 @@
 		BE1B36CF1E1D200C00091A27 /* URLExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1B36CE1E1D200C00091A27 /* URLExtension.swift */; };
 		BEBE40FE1E1E003A009BB3FA /* ReactiveExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBE40FD1E1E003A009BB3FA /* ReactiveExtension.swift */; };
 		BEE2CAD11E1EB35A0079EBEE /* GithubAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE2CAD01E1EB35A0079EBEE /* GithubAPI.swift */; };
+		BEE2CAD41E1EC60E0079EBEE /* SearchTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE2CAD31E1EC60E0079EBEE /* SearchTest.swift */; };
+		BEF0C41A1E1ED404006B288A /* PullRequestTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE2CAD51E1EC6D00079EBEE /* PullRequestTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +91,8 @@
 		BE1B36CE1E1D200C00091A27 /* URLExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLExtension.swift; sourceTree = "<group>"; };
 		BEBE40FD1E1E003A009BB3FA /* ReactiveExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReactiveExtension.swift; sourceTree = "<group>"; };
 		BEE2CAD01E1EB35A0079EBEE /* GithubAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GithubAPI.swift; sourceTree = "<group>"; };
+		BEE2CAD31E1EC60E0079EBEE /* SearchTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTest.swift; sourceTree = "<group>"; };
+		BEE2CAD51E1EC6D00079EBEE /* PullRequestTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PullRequestTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +179,8 @@
 			children = (
 				BE1B368A1E1BD13300091A27 /* desafio_iosTests.swift */,
 				BE1B368C1E1BD13300091A27 /* Info.plist */,
+				BEE2CAD31E1EC60E0079EBEE /* SearchTest.swift */,
+				BEE2CAD51E1EC6D00079EBEE /* PullRequestTest.swift */,
 			);
 			path = "desafio-iosTests";
 			sourceTree = "<group>";
@@ -598,7 +604,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BEF0C41A1E1ED404006B288A /* PullRequestTest.swift in Sources */,
 				BE1B368B1E1BD13300091A27 /* desafio_iosTests.swift in Sources */,
+				BEE2CAD41E1EC60E0079EBEE /* SearchTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
